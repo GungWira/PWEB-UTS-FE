@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+    @apply font-sans antialiased;
+}
+
+.rich-text-content,
+.rich-text-view {
+    @apply text-slate-700 dark:text-slate-300;
+}
+
+.rich-text-content > :first-child,
+.rich-text-view > :first-child {
+    @apply mt-0;
+}
+
+.rich-text-content > :last-child,
+.rich-text-view > :last-child {
+    @apply mb-0;
+}
+
+.rich-text-content p,
+.rich-text-view p {
+    @apply my-2 leading-relaxed;
+}
+
+.rich-text-content h3,
+.rich-text-view h3 {
+    @apply mt-4 mb-1.5 text-sm font-bold text-slate-900 dark:text-white;
+}
+
+.rich-text-content h4,
+.rich-text-view h4 {
+    @apply mt-3 mb-1 text-xs font-bold text-slate-900 dark:text-white;
+}
+
+.rich-text-content ul,
+.rich-text-view ul {
+    @apply my-2 list-outside list-disc space-y-1 pl-5;
+}
+
+.rich-text-content ol,
+.rich-text-view ol {
+    @apply my-2 list-outside list-decimal space-y-1 pl-5;
+}
+
+.rich-text-content li p,
+.rich-text-view li p {
+    @apply my-0;
+}
+
+.rich-text-content blockquote,
+.rich-text-view blockquote {
+    @apply my-2.5 border-l-2 border-blue-500 pl-3 text-slate-600 italic dark:text-slate-400;
+}
+
+.rich-text-content strong,
+.rich-text-view strong {
+    @apply font-bold text-slate-900 dark:text-white;
+}
+
+.rich-text-content u,
+.rich-text-view u {
+    @apply underline;
+}
+
+.rich-text-content s,
+.rich-text-view s {
+    @apply line-through;
+}
